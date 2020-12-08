@@ -10,9 +10,8 @@ description: 研发这几年
 
 ------
 ## 个人资料
-* age:29
-* position:如github域名,浙江宁波
-* qq:416693050
+* age:30+
+* position:as domain
 * telephone:13957751049
 
 ## 教育背景
