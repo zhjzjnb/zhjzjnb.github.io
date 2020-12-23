@@ -10,6 +10,15 @@ description:
 
 ## 常用指令
 
+###  core open-file
+    vim /etc/security/limits.conf
+    root soft     nproc          65535
+    root hard     nproc          65535
+    root soft     nofile         65535
+    root hard     nofile         65535
+    root soft     core         unlimited
+    root hard     core         unlimited
+
 ###  ssh免密码
     ssh-keygen -t rsa
     将.ssh/id_rsa.pub拷贝到服务器下的.ssh目录
