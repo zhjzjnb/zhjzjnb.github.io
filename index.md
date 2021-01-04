@@ -1,12 +1,12 @@
 ---
-title: 简历
+title: profile
 layout: post
 category: resume
 tags: personal
-description: 研发这几年
+description: none
 ---
 
-# coco2dx游戏工程师
+# 能飘到哪里
 
 ------
 ## 个人资料
