@@ -1,9 +1,9 @@
 ---
 layout: post
-title: nginx 配置https
+title: nginx 配置https 反向代理
 category: 技术
-tags:  nginx
-keywords: nginx https
+tags:  nginx 
+keywords: nginx https proxy
 ---
 
 
@@ -15,7 +15,7 @@ openssl rsa -in ip.pem -out ip.key
 openssl req -new -key ip.pem -out ip.csr
 openssl x509 -req -days 3650 -in ip.csr  -signkey ip.key -out ip.crt
 
-
+访问 https://domain/api/ 会代理到proxy_pass并去掉前缀/api 最终路径=>/ /api/login =>/login
 
 
 server {
@@ -33,6 +33,14 @@ server {
     location / {
         root /var/www/html;
         index index.html index.htm;
+    }
+    
+    location /api/ {
+         proxy_pass_header Server;
+         proxy_set_header Host $http_host;
+         proxy_set_header X-Real-IP $remote_addr;
+         proxy_set_header X-Scheme $scheme;
+         proxy_pass http://127.0.0.1:3001/;
     }
 }
 
