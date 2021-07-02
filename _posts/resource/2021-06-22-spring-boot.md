@@ -14,8 +14,10 @@ keywords: spring-boot
 [人人开源](https://www.renren.io/)
 
 ### java核心库
-[Guava](https://github.com/google/guava/)
+谷歌大佬的,导入就对了[Guava](https://github.com/google/guava/)
 
-[hutool](https://hutool.cn/)
+乱七八糟一堆轮子[hutool](https://hutool.cn/)
 
 好用又不好用的[lombok](https://projectlombok.org/)
+
+前后分离接口[knife4j](https://doc.xiaominfo.com/)
