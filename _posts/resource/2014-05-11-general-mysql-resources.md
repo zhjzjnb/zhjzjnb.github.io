@@ -9,13 +9,18 @@ description:
 
 ## 常用命令
 
+### ssh隧道访问
+    ssh -NCPf root@192.168.1.1 -L 7777:127.0.0.1:3306
+    mysql -uroot -proot -h 127.0.0.1 -P 7777
+    将192.168.1.1的3306端口映射到本地7777端口，C压缩 P用一个非特权端口进行出去的连接 f隧道后台运行 N不执行远程命令
+
 ### 登录数据库
     
     mysql -h localhost -uroot -p
 
 ### 导出数据库
     
-    mysqldump -uroot -p db > db.sql
+    mysqldump  -h 192.168.1.1 -uroot -proot --databases testdb -n  --default-character-set='utf8mb4' --set-charset --skip-add-locks |gzip >./testdb-`date +"%Y-%m-%d-%H-%M-%S"`.sql.tgz
 
 ### 导入数据库
     
