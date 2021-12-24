@@ -7,6 +7,9 @@ keywords: spring-boot
 ---
 
 
+### rabbitmq
+[RabbitMQ Simulator](http://tryrabbitmq.com/)
+
 ### 数据库
 [苞米豆](https://baomidou.com/)
 
