@@ -47,4 +47,9 @@ description:
 ### 赋予数据库权限
 
     GRANT ALL ON testdb.* TO 'test'@'localhost';
+    
+### 5.7时间戳0问题
+
+     set session
+     sql_mode='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
 
