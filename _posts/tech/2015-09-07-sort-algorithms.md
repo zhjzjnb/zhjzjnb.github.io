@@ -220,50 +220,38 @@ void merge_sort(vector<int> &nums, int b, int e, vector<int> &temp)
 2. 将大于基准数的移到右边，小于的移到左边
 3. 递归的对子数组重复执行1，2，直到整个数组有序
 
-```c++
-void quick_sort(vector<int> &nums, int b, int e, vector<int> &temp)
-{
-    int m = (b + e) / 2;
-    if (m != b) {
-        int lb = b, rb = e - 1;
-
-        for (int i = b; i < e; i++) {
-            if (i == m)
-                continue;
-            if (nums[i] < nums[m])
-                temp[lb++] = nums[i];
-            else
-                temp[rb--] = nums[i];
+```c
+#include <stdio.h>
+int findp(int *arr,int low, int high){
+   
+    int key = arr[low];
+    while(low < high){
+        while(low < high && key <= arr[high]){
+            high--;
         }
-        temp[lb] = nums[m];
-        
-        for (int i = b; i < e; i++)
-            nums[i] = temp[i];
-        
-        quick_sort(nums, b, lb, temp);
-        quick_sort(nums, lb + 1, e, temp);
+        arr[low] = arr[high];
+       
+        while(low < high && key >= arr[low]) {
+            low++;
+        }
+        arr[high] = arr[low];
+    }
+    arr[low] = key;
+    
+    return low;
+}
+void qqsort(int *arr,int low, int high){
+    if (low<high) {
+        int p = findp(arr,low,high);
+        qqsort(arr, low, p-1);
+        qqsort(arr, p+1, high);
     }
 }
-```
-
-解法2: 不需要辅助空间
-
-```c++
-void quick_sort(vector<int> &nums, int b, int e)
-{
-    if (b < e - 1) {
-        int lb = b, rb = e - 1;
-        while (lb < rb) {
-            while (nums[rb] >= nums[b] && lb < rb)
-                rb--;
-            while (nums[lb] <= nums[b] && lb < rb)
-                lb++;
-            swap(nums[lb], nums[rb]);
-        }
-        swap(nums[b], nums[lb]);
-        quick_sort(nums, b, lb);
-        quick_sort(nums, lb + 1, e);
-    }
+int main(void){
+    int arr[] = {30,50,6,1,90};
+    int len = sizeof(arr)/sizeof(arr[0]);
+    qqsort(arr,0,len-1);
+    return 0;
 }
 ```
 
