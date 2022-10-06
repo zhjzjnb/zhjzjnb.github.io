@@ -30,3 +30,14 @@ void stringtohexstr(char* dst, const char* src, int len){
     dst[len*2] = '\0';
 }
 ```
+
+### shell ssh隧道
+```bash
+192.168.0.1的mysql3306绑定本地,外部无法访问
+#打开隧道转发,直接连接本地13306端口
+ssh -CfNgf -L 13306:127.0.0.1:3306 root@192.168.0.1
+#删除
+lsof -i:13306|awk '{print $2}'|tail -1|xargs kill
+
+
+```
