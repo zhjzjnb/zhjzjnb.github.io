@@ -41,3 +41,9 @@ lsof -i:13306|awk '{print $2}'|tail -1|xargs kill
 
 
 ```
+
+### find删除3天的前文件
+```bash
+find . -mtime +3 -type f -name '*.bak'  | xargs rm -rf 
+mtime is modify time
+```
