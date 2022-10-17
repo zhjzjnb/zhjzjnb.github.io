@@ -47,3 +47,5 @@ lsof -i:13306|awk '{print $2}'|tail -1|xargs kill
 find . -mtime +3 -type f -name '*.bak'  | xargs rm -rf 
 mtime is modify time
 ```
+
+### 51单片机p0口需要上拉电阻
