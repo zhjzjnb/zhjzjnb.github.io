@@ -49,3 +49,20 @@ mtime is modify time
 ```
 
 ### 51单片机p0口需要上拉电阻
+
+### proteus8工具
+```bash
+常用51单片机	AT89C52
+晶振	CRYSTAL
+电阻	RES
+排阻	RESPACK-8
+瓷片电容	CAP
+电解电容	CAP-ELEC
+单刀单掷开关	SW-SPST
+单刀双掷开关	SW-SPDT
+按钮	BUTTON
+发光二极管	LED
+蜂鸣器	BUZZER
+三极管	NPN/PNP
+数码管	7SEG
+```
