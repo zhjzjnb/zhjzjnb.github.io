@@ -66,3 +66,8 @@ mtime is modify time
 三极管	NPN/PNP
 数码管	7SEG
 ```
+
+### xcode provision位置
+```bash
+~/Library/MobileDevice/Provisioning Profiles
+```
