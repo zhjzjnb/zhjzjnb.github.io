@@ -38,7 +38,8 @@ void stringtohexstr(char* dst, const char* src, int len){
 ssh -CfNgf -L 13306:127.0.0.1:3306 root@192.168.0.1
 #删除
 lsof -i:13306|awk '{print $2}'|tail -1|xargs kill
-
+#kill
+ps aux|grep newp_iot_server|grep -v "grep"|awk '{print $2}'|xargs kill
 
 ```
 
