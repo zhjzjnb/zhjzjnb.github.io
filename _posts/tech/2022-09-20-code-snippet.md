@@ -72,3 +72,10 @@ mtime is modify time
 ```bash
 ~/Library/MobileDevice/Provisioning Profiles
 ```
+### 日志宏
+```c
+#define log(format, args...)    \
+{\
+    fprintf( stderr, format , ## args );\
+}
+```
