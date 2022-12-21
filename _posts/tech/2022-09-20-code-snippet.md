@@ -51,6 +51,8 @@ mtime is modify time
 
 ### 51单片机p0口需要上拉电阻
 ```c
+void Timer0Routine() interrupt 1{}
+void Timer1Routine() interrupt 3{}
 机器周期=12/n(n指晶振频率,12一个机器周期)
 定时的初值=M/机器周期
 TH0 = (65536-初值)/256
