@@ -90,3 +90,66 @@ TL0 = (65536-初值)%256
     fprintf( stderr, format , ## args );\
 }
 ```
+
+### android 判断64位
+```java
+private String getos(){
+
+    StringBuilder sb = new StringBuilder();
+    sb.append("android.os.Process.is64Bit():").append(android.os.Process.is64Bit()).append("\n");
+    sb.append("is64:").append(is64()).append("\n");
+    sb.append("isART64:").append(isART64()).append("\n");
+    sb.append("is64bit:").append(is64bit()).append("\n");
+
+    return sb.toString();
+
+}
+
+public  boolean is64() {
+    String arch = System.getProperty("os.arch");
+    if (arch != null && arch.contains("64")) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+private  boolean isART64() {
+
+    final String tag = "is64ART";
+    final String fileName = "art";
+
+    try {
+        ClassLoader classLoader = getClassLoader();
+        Class<?> cls = ClassLoader.class;
+        Method method = cls.getDeclaredMethod("findLibrary", String.class);
+        Object object = method.invoke(classLoader, fileName);
+        if (object != null) {
+            return ((String)object).contains("lib64");
+        }
+    } catch (Exception e) {
+
+    }
+
+    return false;
+}
+
+public  boolean is64bit() {
+    boolean is64bit = false;
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        is64bit = Build.SUPPORTED_64_BIT_ABIS.length > 0;
+    } else {
+        try {
+            BufferedReader localBufferedReader =
+                    new BufferedReader(new FileReader("/proc/cpuinfo"));
+            if (localBufferedReader.readLine().contains("aarch64")) {
+                is64bit = true;
+            }
+            localBufferedReader.close();
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
+    }
+    return is64bit;
+}
+```
