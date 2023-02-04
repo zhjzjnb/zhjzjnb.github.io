@@ -153,3 +153,11 @@ public  boolean is64bit() {
     return is64bit;
 }
 ```
+
+## h5视频加速
+```js
+/* 先找到video class类别 然后点击console输入代码并运行 */
+document.querySelector('video').defaultPlaybackRate = 1.0;  // 默认值
+document.querySelector('video').play();
+document.querySelector('video').playbackRate = 16.0;    // main语句
+```
