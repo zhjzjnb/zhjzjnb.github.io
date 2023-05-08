@@ -180,6 +180,16 @@ document.querySelector('video').play();
 document.querySelector('video').playbackRate = 16.0;    // main语句
 ```
 
+## mybatis generator 大坑，nullCatalogMeansCurrent指定只获取本库表
+```xml
+ <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+    connectionURL="jdbc:mysql://127.0.0.1:3306/zfuck?useSSL=false&amp;nullCatalogMeansCurrent=true"
+		userId="root"
+    password="root">
+</jdbcConnection>
+```
+
+
 ## beyond compare
 ```
 --- BEGIN LICENSE KEY ---
