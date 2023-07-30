@@ -189,6 +189,32 @@ document.querySelector('video').playbackRate = 16.0;    // main语句
 </jdbcConnection>
 ```
 
+## cocos creator vscode
+```json
+{
+    "files.exclude": {
+        "**/*.meta": true,
+        "library/": true,
+        "local/": true,
+        "temp/": true,
+        "**/*.png": true,
+        "**/*.skel": true,
+        "**/*.atlas": true,
+    },
+    "search.exclude": {
+        "\"library/\"": true,
+        "\"temp/\"": true,
+        "build/": true,
+        "tools/": true
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "files.eol": "\n",
+    "prettier.singleQuote": true
+}
+```
+
 
 ## beyond compare
 ```
