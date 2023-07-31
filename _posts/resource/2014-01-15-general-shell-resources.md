@@ -48,8 +48,10 @@ description:
 
 ### 压缩命令
 
-    tar zxvf aaa.tar.gz
-    tar zcvf aaa.tar.gz aaa
+    tar -zxvf aaa.tar.gz
+    tar -zcvf aaa.tar.gz aaa
+    #跳过目录
+    tar -zxvf aaa.tgz -C /data/ --strip-components 1
 
 
 ### 查看端口的占用
