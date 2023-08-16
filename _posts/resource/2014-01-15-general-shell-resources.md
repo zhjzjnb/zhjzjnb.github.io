@@ -10,6 +10,12 @@ description:
 
 ## 常用指令
 
+### less file
+    shift+g 跳到文件末尾
+    ctrl+g 文件头
+    b=back
+    f=front
+
 ###  core open-file
     vim /etc/security/limits.conf
     root soft     nproc          65535
