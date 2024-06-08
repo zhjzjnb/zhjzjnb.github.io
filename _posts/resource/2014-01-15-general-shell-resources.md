@@ -10,6 +10,9 @@ description:
 
 ## 常用指令
 
+### 统计大小
+    du -ch --max-depth=1
+
 ### less file
     shift+g 跳到文件末尾
     ctrl+g 文件头
